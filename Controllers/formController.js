@@ -1,14 +1,14 @@
 const forms = require("../Models/formSchema");
 
 
+
 exports.apply=async(req,res)=>{
     console.log("Entered form");
 
-    const resume = req.file.filename
 
-    const{firstname,middlename,lastname,dob,city,gender,married,email,phone,permanentAddress,addressA,addressB,country,state,citya,pincode,permanentAddressB,addressC,addressD,countryb,stateb,cityb,pincodeb,contactname,contactemail,contactphone,relation,experience,education,degree,special,institutename,university,ctype,startdate,enddate} = req.body
+    const{firstname,middlename,lastname,dob,city,gender,married,email,phone,permanentAddress,addressA,addressB,country,state,citya,pincode,permanentAddressB,addressC,addressD,countryb,stateb,cityb,pincodeb,contactname,contactemail,contactphone,relation,experience,education,degree,special,institutename,university,ctype,startdate,enddate,companya,rolea,perioda,descriptiona,companyb,roleb,periodb,descriptionb,organisation,orolea,operioda,odescriptiona,organisationb,oroleb,operiodb,odescriptionb,certificatea,certificateb} = req.body
 
-    console.log(`${firstname} ${email} ${permanentAddress} ${education} ${resume}`);
+    console.log(`${firstname} ${email} ${permanentAddress} ${education} ${certificateb}`);
     
    try{
 
@@ -19,7 +19,7 @@ exports.apply=async(req,res)=>{
         res.status(402).json("User with mail Id already exists")
     }
     else{
-        const newForm = new forms({firstname,middlename,lastname,dob,city,gender,married,email,phone,permanentAddress,addressA,addressB,country,state,citya,pincode,permanentAddressB,addressC,addressD,countryb,stateb,cityb,pincodeb,contactname,contactemail,contactphone,relation,experience,education,degree,special,institutename,university,ctype,startdate,enddate,resume})
+        const newForm = new forms({firstname,middlename,lastname,dob,city,gender,married,email,phone,permanentAddress,addressA,addressB,country,state,citya,pincode,permanentAddressB,addressC,addressD,countryb,stateb,cityb,pincodeb,contactname,contactemail,contactphone,relation,experience,education,degree,special,institutename,university,ctype,startdate,enddate,companya,rolea,perioda,descriptiona,companyb,roleb,periodb,descriptionb,organisation,orolea,operioda,odescriptiona,organisationb,oroleb,operiodb,odescriptionb,certificatea,certificateb}) 
         await newForm.save()
         res.status(200).json("Application applied succesfully.")
     }
@@ -36,7 +36,7 @@ exports.getDetails=async(req,res)=>{
     console.log("Entered details");
     try{
         const details = await forms.find()
-        console.log(details);
+        // console.log(details);
         if(details){
             res.status(200).json(details)
         
@@ -49,3 +49,7 @@ exports.getDetails=async(req,res)=>{
         res.status(500).json("Server error")
     }
 }
+
+
+
+

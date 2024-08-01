@@ -1,12 +1,14 @@
 const express = require('express');
 
+const path = require('path')
+
+const fs = require('fs')
+
 const adminController = require('../Controllers/adminController')
 
 const userController = require('../Controllers/userController')
 
 const formController = require('../Controllers/formController')
-
-const multerConfig = require('../Middleware/multerMiddleware')
 
 const router = new express.Router()
 
@@ -20,6 +22,9 @@ router.post('/login',userController.login)
 
 router.get('/details',formController.getDetails)
 
-router.post('/apply',multerConfig.single('resume'), formController.apply);
+router.post('/apply',formController.apply);
+
+
+
 
 module.exports = router

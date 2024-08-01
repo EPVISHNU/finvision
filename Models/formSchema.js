@@ -144,10 +144,78 @@ const formSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    resume: {
+    companya: {
         type: String,
-        required: true,
-    }
+        
+    },
+    rolea: {
+        type: String,
+        
+    },
+    perioda: {
+        type: String,
+        
+    },
+    descriptiona: {
+        type: String,
+        
+    },
+    companyb: {
+        type: String,
+        
+    },
+    roleb: {
+        type: String,
+        
+    },
+    periodb: {
+        type: String,
+        
+    },
+    descriptionb: {
+        type: String,
+        
+    },
+    organisation: {
+        type: String,
+        
+    },
+    orolea: {
+        type: String,
+        
+    },
+    operioda: {
+        type: String,
+        
+    },
+    odescriptiona: {
+        type: String,
+        
+    },
+    organisationb: {
+        type: String,
+        
+    },
+    oroleb: {
+        type: String,
+        
+    },
+    operiodb: {
+        type: String,
+        
+    },
+    odescriptionb: {
+        type: String,
+        
+    },
+    certificatea: {
+        type: String,
+        
+    },
+    certificateb: {
+        type: String,
+        
+    },
 })
 
 const forms = mongoose.model("forms",formSchema)
